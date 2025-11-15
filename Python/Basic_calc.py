@@ -6,6 +6,9 @@
     Print results
 """
 
+import os
+
+os.system("clear")
 #1. Initialize vars and/or constants (Inputs)
 num1 = 10
 num2 = 5
