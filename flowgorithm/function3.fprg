@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="function3"/>
+        <attribute name="authors" value="PC-24"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-11-16 11:56:28 a. m."/>
+        <attribute name="created" value="UEMtMjQ7REVTS1RPUC1BQ0wzSzJWOzIwMjUtMTEtMTY7MTE6MTY6MDggYS4gbS47Mjc5OQ=="/>
+        <attribute name="edited" value="UEMtMjQ7REVTS1RPUC1BQ0wzSzJWOzIwMjUtMTEtMTY7MTE6NTY6MjggYS4gbS47MTsyOTEz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="message" type="String" array="False" size=""/>
+            <declare name="userName" type="String" array="False" size=""/>
+            <output expression="&quot;Enter your name: &quot;" newline="True"/>
+            <input variable="userName"/>
+            <assign variable="message" expression="ShowGreeting2(userName)"/>
+            <output expression="message" newline="True"/>
+        </body>
+    </function>
+    <function name="ShowGreeting2" type="String" variable="msg">
+        <parameters>
+            <parameter name="userName" type="String" array="False"/>
+        </parameters>
+        <body>
+            <declare name="msg" type="String" array="False" size=""/>
+            <assign variable="msg" expression="&quot;Hello &quot; &amp; userName &amp; &quot;, welcome&quot;"/>
+        </body>
+    </function>
+</flowgorithm>

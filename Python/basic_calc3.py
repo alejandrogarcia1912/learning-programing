@@ -9,6 +9,15 @@ import os
 os.system('cls')  # 'clear' en Linux/Mac
 
 # 2. Initialize vars and/or const
+print("welcome")
+def showGreeting(userName):
+    print("Hello " + userName + ", welcome")
+
+# Main
+print("Enter your name: ")
+userName = input()
+showGreeting(userName)
+
 print("Please, enter num1: ")
 num1 = float(input())
 
@@ -34,3 +43,5 @@ print(f"Addition: {add}")
 print(f"Subtraction: {subs}")
 print(f"Multiplication: {mult}")
 print(f"Division: {div}")
+
+print("¡have a great day! " + userName)
