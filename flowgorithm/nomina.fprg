@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="nomina"/>
+        <attribute name="authors" value="PC-24"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-11-22 11:17:17 p. m."/>
+        <attribute name="created" value="UEMtMjQ7REVTS1RPUC1BQ0wzSzJWOzIwMjUtMTEtMjI7MDM6MDU6MDYgcC4gbS47MjgwOA=="/>
+        <attribute name="edited" value="UEMtMjQ7REVTS1RPUC1BQ0wzSzJWOzIwMjUtMTEtMjI7MTE6MTc6MTcgcC4gbS47MjsyOTIx"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="nombre" type="String" array="False" size=""/>
+            <declare name="email" type="String" array="False" size=""/>
+            <declare name="celular" type="String" array="False" size=""/>
+            <declare name="genero" type="String" array="False" size=""/>
+            <declare name="salario" type="Real" array="False" size=""/>
+            <declare name="anioNacimiento" type="Integer" array="False" size=""/>
+            <declare name="anioActual" type="Integer" array="False" size=""/>
+            <declare name="edad" type="Integer" array="False" size=""/>
+            <declare name="totalEmpleados" type="Integer" array="False" size=""/>
+            <declare name="totalF" type="Integer" array="False" size=""/>
+            <declare name="totalM" type="Integer" array="False" size=""/>
+            <declare name="totalO" type="Integer" array="False" size=""/>
+            <declare name="totalSalarios" type="Real" array="False" size=""/>
+            <declare name="sumaEdades" type="Integer" array="False" size=""/>
+            <declare name="continuar" type="String" array="False" size=""/>
+            <assign variable="totalEmpleados" expression="0"/>
+            <assign variable="totalM" expression="0"/>
+            <assign variable="totalF" expression="0"/>
+            <assign variable="totalO" expression="0"/>
+            <assign variable="totalSalarios" expression="0"/>
+            <assign variable="sumaEdades" expression="0"/>
+            <assign variable="anioActual" expression="2025"/>
+            <assign variable="continuar" expression="&quot;S&quot;"/>
+            <while expression="continuar = &quot;S&quot;">
+                <output expression="&quot;Registro de Empleados&quot;" newline="True"/>
+                <output expression="&quot;Nombre&quot;" newline="True"/>
+                <input variable="nombre"/>
+                <output expression="&quot;email&quot;" newline="True"/>
+                <input variable="email"/>
+                <output expression="&quot;numero de celular&quot;" newline="True"/>
+                <input variable="celular"/>
+                <output expression="&quot;Genero [M, F, O]&quot;" newline="True"/>
+                <input variable="genero"/>
+                <while expression="genero &lt;&gt; &quot;M&quot; AND genero &lt;&gt; &quot;F&quot; AND genero &lt;&gt; &quot;O&quot;">
+                    <output expression="&quot;Valor inv&#225;lido. Digite M, F o O&quot;" newline="True"/>
+                    <input variable="genero"/>
+                    <assign variable="genero" expression="ToUpper(genero)"/>
+                </while>
+                <output expression="&quot;Salario&quot;" newline="True"/>
+                <input variable="salario"/>
+                <output expression="&quot;A&#241;o de nacimiento&quot;" newline="True"/>
+                <input variable="anioNacimiento"/>
+                <assign variable="edad" expression="anioActual - anioNacimiento"/>
+                <assign variable="totalEmpleados" expression="totalEmpleados + 1"/>
+                <assign variable="totalSalarios" expression="totalSalarios + salario"/>
+                <assign variable="sumaEdades" expression="sumaEdades + edad"/>
+                <if expression="genero = &quot;M&quot;">
+                    <then>
+                        <assign variable="totalM" expression="totalM + 1"/>
+                    </then>
+                    <else>
+                        <if expression="genero = &quot;F&quot;">
+                            <then>
+                                <assign variable="totalF" expression="totalF + 1"/>
+                            </then>
+                            <else>
+                                <assign variable="totalO" expression="totalO + 1"/>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <output expression="&quot;&#191;Desea agregar otro? (S/N)&quot;" newline="True"/>
+                <input variable="continuar"/>
+            </while>
+            <output expression="&quot;REPORTE FINAL&quot;" newline="True"/>
+            <output expression="&quot;Total empleados: &quot; &amp; totalEmpleados" newline="True"/>
+            <output expression="&quot;Total hombres (M): &quot; &amp; totalM" newline="True"/>
+            <output expression="&quot;Total mujeres (F): &quot; &amp; totalF" newline="True"/>
+            <output expression="&quot;Total otros (O): &quot; &amp; totalO" newline="True"/>
+            <output expression="&quot;Total salarios: &quot; &amp; totalSalarios" newline="True"/>
+            <output expression="&quot;Promedio edades: &quot; &amp; (sumaEdades / totalEmpleados)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
