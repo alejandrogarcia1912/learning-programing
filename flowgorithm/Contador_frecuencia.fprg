@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<Function name="Reto3_ConteoFrecuencia" type="None" parameter="veces">
+    <Declarations>
+        <Declare name="veces" type="Integer" array="False" size=""/>
+        <Declare name="contadores" type="Integer" array="True" size="7"/>
+        <Declare name="i" type="Integer" array="False" size=""/>
+        <Declare name="resultado_dado" type="Integer" array="False" size=""/>
+    </Declarations>
+    <Body>
+        <For variable="i" start="1" end="6" direction="inc" step="1">
+            <Assign variable="contadores[i]" expression="0"/>
+        </For>
+
+        <For variable="i" start="1" end="veces" direction="inc" step="1">
+            <Assign variable="resultado_dado" expression="Random(6) + 1"/>
+            <Assign variable="contadores[resultado_dado]" expression="contadores[resultado_dado] + 1"/>
+        </For>
+        
+        <Output expression="&quot;--- REPORTE DE FRECUENCIAS ---&quot;" newLine="True"/>
+        <For variable="i" start="1" end="6" direction="inc" step="1">
+            <Output expression="&quot;El número &quot; &amp; i &amp; &quot; se generó: &quot; &amp; contadores[i] &amp; &quot; veces.&quot;" newLine="True"/>
+        </For>
+    </Body>
+</Function>

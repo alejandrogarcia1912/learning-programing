@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<Function name="Reto5_ContarParesImpares" type="None" parameter="veces">
+    <Declarations>
+        <Declare name="veces" type="Integer" array="False" size=""/>
+        <Declare name="pares_generados" type="Integer" array="False" size=""/>
+        <Declare name="impares_generados" type="Integer" array="False" size=""/>
+        <Declare name="i" type="Integer" array="False" size=""/>
+        <Declare name="resultado_dado" type="Integer" array="False" size=""/>
+    </Declarations>
+    <Body>
+        <Assign variable="pares_generados" expression="0"/>
+        <Assign variable="impares_generados" expression="0"/>
+        
+        <For variable="i" start="1" end="veces" direction="inc" step="1">
+            <Assign variable="resultado_dado" expression="Random(6) + 1"/>
+            <If expression="resultado_dado % 2 == 0">
+                <Then>
+                    <Assign variable="pares_generados" expression="pares_generados + 1"/>
+                </Then>
+                <Else>
+                    <Assign variable="impares_generados" expression="impares_generados + 1"/>
+                </Else>
+            </If>
+        </For>
+
+        <Output expression="&quot;Total de tiros PARES: &quot; &amp; pares_generados" newLine="True"/>
+        <Output expression="&quot;Total de tiros IMPARES: &quot; &amp; impares_generados" newLine="True"/>
+    </Body>
+</Function>

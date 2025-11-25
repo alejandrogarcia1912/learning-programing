@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<Function name="Reto2_SumaTotal" type="None" parameter="veces">
+    <Declarations>
+        <Declare name="veces" type="Integer" array="False" size=""/>
+        <Declare name="suma_total" type="Integer" array="False" size=""/>
+        <Declare name="i" type="Integer" array="False" size=""/>
+        <Declare name="resultado_dado" type="Integer" array="False" size=""/>
+    </Declarations>
+    <Body>
+        <Assign variable="suma_total" expression="0"/>
+        <For variable="i" start="1" end="veces" direction="inc" step="1">
+            <Assign variable="resultado_dado" expression="Random(6) + 1"/>
+            <Output expression="&quot;Tiro #&quot; &amp; i &amp; &quot;: &quot; &amp; resultado_dado" newLine="True"/>
+            <Assign variable="suma_total" expression="suma_total + resultado_dado"/>
+        </For>
+        <Output expression="&quot;La suma total de los valores generados es: &quot; &amp; suma_total" newLine="True"/>
+    </Body>
+</Function>

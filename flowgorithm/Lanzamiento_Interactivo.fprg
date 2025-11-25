@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<Function name="Reto6_InteractivoReporte" type="None" parameter="">
+    <Declarations>
+        <Declare name="total_tiros" type="Integer" array="False" size=""/>
+        <Declare name="suma_total" type="Integer" array="False" size=""/>
+        <Declare name="pares_generados" type="Integer" array="False" size=""/>
+        <Declare name="impares_generados" type="Integer" array="False" size=""/>
+        <Declare name="resultado_dado" type="Integer" array="False" size=""/>
+        <Declare name="respuesta" type="String" array="False" size=""/>
+    </Declarations>
+    <Body>
+        <Assign variable="total_tiros" expression="0"/>
+        <Assign variable="suma_total" expression="0"/>
+        <Assign variable="pares_generados" expression="0"/>
+        <Assign variable="impares_generados" expression="0"/>
+        
+        <Do>
+            <Assign variable="total_tiros" expression="total_tiros + 1"/>
+            <Assign variable="resultado_dado" expression="Random(6) + 1"/>
+            <Output expression="&quot;Tiro #&quot; &amp; total_tiros &amp; &quot;: ¡Ha salido el número &quot; &amp; resultado_dado &amp; &quot;!&quot;" newLine="True"/>
+            
+            <Assign variable="suma_total" expression="suma_total + resultado_dado"/>
+            
+            <If expression="resultado_dado % 2 == 0">
+                <Then>
+                    <Assign variable="pares_generados" expression="pares_generados + 1"/>
+                </Then>
+                <Else>
+                    <Assign variable="impares_generados" expression="impares_generados + 1"/>
+                </Else>
+            </If>
+            
+            <Output expression="&quot;¿Desea volver a lanzar? (S/N)&quot;" newLine="True"/>
+            <Input variable="respuesta"/>
+        </Do>
+        <While expression="respuesta == &quot;S&quot; OR respuesta == &quot;s&quot;">
+        </While>
+
+        <Output expression="&quot;=== REPORTE FINAL ==="/>
+        <Output expression="&quot;Total de tiros efectuados: &quot; &amp; total_tiros" newLine="True"/>
+        <Output expression="&quot;Suma total de los tiros efectuados: &quot; &amp; suma_total" newLine="True"/>
+        <Output expression="&quot;Total de pares generados: &quot; &amp; pares_generados" newLine="True"/>
+        <Output expression="&quot;Total de impares generados: &quot; &amp; impares_generados" newLine="True"/>
+    </Body>
+</Function>

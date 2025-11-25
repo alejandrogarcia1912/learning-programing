@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<Function name="Reto1_DadoParImpar" type="None" parameter="">
+    <Declarations>
+        <Declare name="resultado" type="Integer" array="False" size=""/>
+    </Declarations>
+    <Body>
+        <Assign variable="resultado" expression="Random(6) + 1"/>
+        <Output expression="&quot;El dado ha sido lanzado. Resultado: &quot; &amp; resultado" newLine="True"/>
+        <If expression="resultado % 2 == 0">
+            <Then>
+                <Output expression="&quot;El número &quot; &amp; resultado &amp; &quot; es PAR.&quot;" newLine="True"/>
+            </Then>
+            <Else>
+                <Output expression="&quot;El número &quot; &amp; resultado &amp; &quot; es IMPAR.&quot;" newLine="True"/>
+            </Else>
+        </If>
+    </Body>
+</Function>

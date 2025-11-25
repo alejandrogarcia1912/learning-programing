@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<Function name="Reto4_ParDeSeis" type="None" parameter="">
+    <Declarations>
+        <Declare name="dado1" type="Integer" array="False" size=""/>
+        <Declare name="dado2" type="Integer" array="False" size=""/>
+        <Declare name="contador_tiros" type="Integer" array="False" size=""/>
+    </Declarations>
+    <Body>
+        <Assign variable="contador_tiros" expression="0"/>
+        <Do>
+            <Assign variable="contador_tiros" expression="contador_tiros + 1"/>
+            <Assign variable="dado1" expression="Random(6) + 1"/>
+            <Assign variable="dado2" expression="Random(6) + 1"/>
+            <Output expression="&quot;Tiro #&quot; &amp; contador_tiros &amp; &quot;: Resultados (&quot; &amp; dado1 &amp; &quot;, &quot; &amp; dado2 &amp; &quot;)" newLine="True"/>
+        </Do>
+        <While expression="NOT (dado1 == 6 AND dado2 == 6)">
+        </While>
+        <Output expression="&quot;¡PAR DE SEIS ENCONTRADO! Total de intentos necesarios: &quot; &amp; contador_tiros" newLine="True"/>
+    </Body>
+</Function>
