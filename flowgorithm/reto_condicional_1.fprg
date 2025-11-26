@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<flowgorithm version="2.0">
+  <decl>
+    <variable name="dado1" type="number"/>
+    <variable name="dado2" type="number"/>
+  </decl>
+  <main>
+    <output>--- Reto Condicional 4: Simulación de Lanzamiento de Dos Dados ---</output>
+    <assign variable="dado1">Random(1,6)</assign>
+    <assign variable="dado2">Random(1,6)</assign>
+    <output>Lanzamiento del Dado 1: {dado1}</output>
+    <output>Lanzamiento del Dado 2: {dado2}</output>
+    <if expression="dado1 == dado2">
+      <then>
+        <output>¡YOU WIN! (Ambos dados son iguales)</output>
+      </then>
+      <else>
+        <output>GAME OVER (Los dados son diferentes)</output>
+      </else>
+    </if>
+    <if expression="dado1 % 2 == 0">
+      <then>
+        <output>El Dado 1 ({dado1}) es PAR.</output>
+      </then>
+      <else>
+        <output>El Dado 1 ({dado1}) es IMPAR.</output>
+      </else>
+    </if>
+    <if expression="dado2 % 2 == 0">
+      <then>
+        <output>El Dado 2 ({dado2}) es PAR.</output>
+      </then>
+      <else>
+        <output>El Dado 2 ({dado2}) es IMPAR.</output>
+      </else>
+    </if>
+  </main>
+</flowgorithm>
